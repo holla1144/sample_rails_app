@@ -12,3 +12,52 @@ Processing by ApplicationController#hello as HTML
 Completed 200 OK in 255ms (Views: 6.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2018-12-07 14:20:04 +0200
+Processing by ApplicationController#hello as HTML
+  Rendering html template
+  Rendered html template (0.0ms)
+Completed 200 OK in 3ms (Views: 1.5ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2018-12-07 14:20:10 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 593ms (Views: 588.6ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2018-12-07 14:30:58 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 57ms (Views: 52.1ms)
+
+
+Started GET "/static_pages/help" for 127.0.0.1 at 2018-12-07 14:31:02 +0200
+Processing by StaticPagesController#help as HTML
+  Rendering static_pages/help.html.erb within layouts/application
+  Rendered static_pages/help.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 33ms (Views: 29.5ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2018-12-07 14:31:09 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 36ms (Views: 32.9ms)
+
+
+Started GET "/static_pages/home" for 127.0.0.1 at 2018-12-07 14:49:04 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 58ms (Views: 54.4ms)
+
+
+Started GET "/static_pages/about" for 127.0.0.1 at 2018-12-07 14:49:07 +0200
+Processing by StaticPagesController#about as HTML
+  Rendering static_pages/about.html.erb within layouts/application
+  Rendered static_pages/about.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 27ms (Views: 24.6ms)
+
+
