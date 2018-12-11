@@ -24,3 +24,6 @@
 
 # ignore spring files
 /spring/*.pid
+/tmp
+.idea
+/log
