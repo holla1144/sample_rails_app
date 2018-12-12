@@ -1,0 +1,9 @@
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= csrf_meta_tags %>
+  <%-# Parentheses are optional in Ruby function calls. -%>
+  <%-# Cury brackets are optional if the hash is the last argument in a function -%>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= render "layouts/shim" %>
+</head>
