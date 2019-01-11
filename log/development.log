@@ -3922,3 +3922,619 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 67ms (Views: 63.9ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:07:35 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (297.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (106.9ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_footer.html.erb (1.4ms)
+Completed 200 OK in 449ms (Views: 435.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:09:35 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (5.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (66.9ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 102ms (Views: 97.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:37:40 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (111.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (249.8ms)
+  Rendered layouts/_header.html.erb (6.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 400ms (Views: 388.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:37:49 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (84.0ms)
+  Rendered layouts/_header.html.erb (3.4ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 131ms (Views: 127.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:37:51 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (32.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (32.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 85ms (Views: 83.4ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:37:59 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UedDVJV/3vXvnWD4P+ANr76gyN6GOhKxaHy3AY7UIF365e+AsMqhTPeI76n15ZQug8VOd9A+OJctbIBjXLXtkg==", "session"=>{"email"=>"mh@anadeainc.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "mh@anadeainc.com"], ["LIMIT", 1]]
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (24.7ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 119ms (Views: 36.4ms | ActiveRecord: 1.7ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:38:08 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"7GQsQCDZU8lifvowHZhYAeBqa0NNUEjejQ3Jh8ZNTwHFd5wBX5w2IPy0JQZ121Z+plV/Saam7rWC11tjNxwyDA==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$uZH83VyMPak5fnko9naVW.A00q0jAONABdt2f4ADvjiB5NedQXSbm"], ["updated_at", "2019-01-11 12:38:08.128731"], ["id", 3]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 133ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:38:08 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (44.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 65ms (Views: 61.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:38:11 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (31.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 47ms (Views: 45.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:38:14 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"r3LIDWYopzRu11pJqqdciUteTwb5INGZ73OPgWhzkaCGYXhMGW3C3fAdhX/C5FL2DWFbDBLWd/LgqR1lmSLsrQ=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-01-11 12:38:14.841174"], ["id", 3]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:38:14 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (31.7ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 48ms (Views: 44.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:38:18 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (32.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 48ms (Views: 45.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:38:36 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (33.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 48ms (Views: 47.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:38:46 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B6OPxgfN3imLrSOkAMNAIhai/vjsb2uOJtq2C3rEMrSsoSMSInihkJO4rPXKxtmjK8d4UbprQahjyoFpqKX/ew==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$pGYfrMChnYbEWFsUYhCPa.QZslQa/Eep9lTDyZ4iR0lD8lbYPerku"], ["updated_at", "2019-01-11 12:38:47.104633"], ["id", 3]]
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 126ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:38:47 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (27.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (12.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 51.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:38:51 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (57.3ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 83ms (Views: 79.8ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:38:54 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"gMAIgldBv8esX0PZpPeX6UVO7O5wEo9Z+fvHOGgbENSp07jDKATaLjKVnO/MtJmWA3H45JvkKTL2IVXcmUpt2Q=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-01-11 12:38:54.226803"], ["id", 3]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:38:54 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_head.html.erb (26.0ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 44ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:38:57 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yaeLZ1EkhDTAKZhmM31dKWOiU2jwD4IhtI4i5iidZo/gtDsmLmHh3V7jR1BbPlNWJZ1HYhv5JEq7VLAC2cwbgg=="}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `forget' for nil:NilClass):
+  
+app/helpers/sessions_helper.rb:28:in `forget'
+app/helpers/sessions_helper.rb:39:in `log_out'
+app/controllers/sessions_controller.rb:19:in `destroy'
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:39:05 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yaeLZ1EkhDTAKZhmM31dKWOiU2jwD4IhtI4i5iidZo/gtDsmLmHh3V7jR1BbPlNWJZ1HYhv5JEq7VLAC2cwbgg=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:39:05 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (31.4ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 50ms (Views: 47.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:39:06 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (36.5ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 54ms (Views: 53.3ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:39:16 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"GaPHPkelXcnKvfav1w25TQ5OTHbJ8nlQU1Ut+27CbqyyoWvqYhAicNKoef4dCCDMMyvK35/2U3YWRRqZvKOjYw==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$UJpGg4hLnY5C5ZfNd3gG4.p.k2MkLyWST/Dl9eRaFruLXUDLKrNbC"], ["updated_at", "2019-01-11 12:39:16.314993"], ["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 137ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:39:16 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (22.5ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 39ms (Views: 35.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:39:18 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.7ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (28.2ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.1ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:39:28 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zAZX6XtPL/lSrVKsuJrL/P/E4Yc2q1lySSv6/G+ZzL5nBPs9XvpQQEq43f1yn1J9wqFnLmCvc1QMO82evfgBcQ==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$pdCKWBIoHxxzEIxrTeEAB.6quE2ZCXwXeRoh9.6uBgW15UmiVYXuq"], ["updated_at", "2019-01-11 12:39:28.998656"], ["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 128ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:39:29 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (36.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 51ms (Views: 48.4ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:39:31 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"JvtHwd0U8BaGLS4Z2antpj4lRyhvcX/XesH6fMcROcgP6PeAolGV/xjn8S+x6uPZeBpTIoSH2bx1G2iYNkBExQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-01-11 12:39:31.623695"], ["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 2.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:39:31 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.4ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (26.0ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 41ms (Views: 37.9ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:39:33 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ioS4JyLs1VmHylhHftiaXpm5nNVFKCrt+ce3xYDXem2jlwhmXamwsBkAh3EWm5Qh34aI367ejIb2HSUhcYYHYA=="}
+Redirected to http://localhost:3000/
+Completed 302 Found in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:39:33 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.3ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_head.html.erb (24.9ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:40:52 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (16.6ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (41.4ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 74ms (Views: 72.8ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:41:02 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"H7yP3ksMNEVgIUBgH8Toi7sLmp63mYOxRjdovpePo3S0viMKbrlL/Hg0zzHVwXEKhm4cN+GdqZcDJ1/cRe5uuw==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$vRsrWLUbjKPl3Bdzr/1YKesFTJlXz2JDkmBr9PlpiTGWS/HWDvYYi"], ["updated_at", "2019-01-11 12:41:03.057629"], ["id", 3]]
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 150ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:41:03 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (30.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.5ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 51ms (Views: 43.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:41:29 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.1ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (47.7ms)
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 71ms (Views: 67.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:41:31 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_head.html.erb (29.7ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 44ms (Views: 43.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:41:39 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0ZxYqkMh1uecFfmJy4dWAJAjcLvJq/DZh1ufBiQVvjeLQfKuEaTFc1H4wWHwZADIWgZV6lMU22nOMTJEXbaHBA==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$nD5ewDm4YSuhqgnWKOjEl./RaArrT1bYqwgFaLqnyVRCKvTJ58NLC"], ["updated_at", "2019-01-11 12:41:40.076423"], ["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 131ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:41:40 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (29.4ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 49ms (Views: 45.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:41:43 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"hmVGf5FmifJ0EuNQRuqeOkrTj88jjVAQ6x/GMGOnizAWZglrMwVKM9tvhrVDqjuxEjHWZZiLOwSRwraRyeQlGg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-01-11 12:41:43.696380"], ["id", 3]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 4ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:41:43 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (24.8ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 38ms (Views: 36.3ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:41:47 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"rIbjnBoVJK6Pwn/mSkCm/zylmWXHRRa7FRpmE0JyyTyFlVPdZVBBRxEIoNAiA6iAepqNbyyzsNAawPT3syO0MQ=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:41:47 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (4.1ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (32.7ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:42:29 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (40.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 56ms (Views: 55.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:42:36 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ru01S93u6MmnBCGZnenFmyeEOrvytYU+s7bvOt4yJZoF75mf+FuXcL8RrshX7FwaGuG8EqSxrxj2pthYDFPoVQ==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$8ngaW6a8fcE1wEBpOwCrLOjTW99dUFzQzvW/LbGk4tSynZBnQE7JG"], ["updated_at", "2019-01-11 12:42:37.004400"], ["id", 3]]
+  [1m[35m (0.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 136ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:42:37 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (38.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.7ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 61ms (Views: 55.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:42:48 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (4.2ms)
+  Rendered layouts/_shim.html.erb (0.8ms)
+  Rendered layouts/_head.html.erb (48.1ms)
+  Rendered layouts/_header.html.erb (2.2ms)
+  Rendered layouts/_footer.html.erb (1.7ms)
+Completed 200 OK in 74ms (Views: 72.2ms)
+
+
+Started POST "/login" for 127.0.0.1 at 2019-01-11 14:42:55 +0200
+Processing by SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"45CUpZ99czOF1lRsZk25Z1TpQjWBdN/9gkUPt1Ct+eO5TT6hzfhgp0g7bIRdru+vnsxnZBvL9E3LL6L1KQ7A0A==", "session"=>{"email"=>"holla1144@gmail.com", "password"=>"[FILTERED]"}, "commit"=>"Log In"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", "$2a$10$ETvXBr0WgUZZk5WZsB1P6eTA/2aMO.j.qaqSj.HJLppu1ImirGKhG"], ["updated_at", "2019-01-11 12:42:55.732987"], ["id", 3]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/3
+Completed 302 Found in 158ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2019-01-11 14:42:55 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (0.6ms)
+  Rendered layouts/_shim.html.erb (1.4ms)
+  Rendered layouts/_head.html.erb (45.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (6.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 73ms (Views: 69.5ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:43:00 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"fFMGI4NDKz0EpaDNsSTYBOOx+nGV6c4/2H/gWPBfy6XsUEk3ISDo/KvYxSi0ZH2Pu1Oj2y7vpSuiopD5Whxljw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "remember_digest" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["remember_digest", nil], ["updated_at", "2019-01-11 12:43:00.448396"], ["id", 3]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 8ms (ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:43:00 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (29.6ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 49ms (Views: 45.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:43:04 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (30.1ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (1.6ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 55ms (Views: 51.9ms | ActiveRecord: 0.1ms)
+
+
+Started DELETE "/logout" for 127.0.0.1 at 2019-01-11 14:43:11 +0200
+Processing by SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"S7gOTL1iugeh38ixUBlDSW3h/gFPdWt118yJD0Xj85Niq74Nwiff7j8VF4c4Wk02K97qC6SDzR7YFhvrtLKOng=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 2ms (ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-11 14:43:11 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.2ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (29.3ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 50ms (Views: 46.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-11 14:43:12 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (1.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (30.1ms)
+  Rendered layouts/_header.html.erb (0.6ms)
+  Rendered layouts/_footer.html.erb (0.3ms)
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.0ms)
+
+
