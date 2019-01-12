@@ -46,6 +46,16 @@ class UsersLoginTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_select "a[href=?]", login_path
     assert_select "a[href=?]", logout_path, count: 0
+  end
 
+  test 'login with remember_me checked' do
+    log_in_as(@user, remember_me: '1')
+    assert_equal cookies[:remember_token], assigns(:user).remember_token # Assigns gives us access to instance variables of a class
+  end
+
+  test 'login with remember_me unchecked' do
+    log_in_as(@user, remember_me: '1')
+    log_in_as(@user, remember_me: '0')
+    assert_empty cookies['remember_token']
   end
 end
