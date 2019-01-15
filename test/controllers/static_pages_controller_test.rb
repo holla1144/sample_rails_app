@@ -28,4 +28,16 @@ class StaticPagesControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
     assert_select "title", "Contact | #{@base_title}"
   end
+
+  test "should get users when logged in" do
+    log_in_as users(:archer)
+    get users_path
+    assert_template "users/index"
+  end
+
+  test "should be redirect from users when not logged in" do
+    get users_path
+    assert_redirected_to login_url
+    assert_not flash.empty?
+  end
 end
