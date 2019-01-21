@@ -7928,3 +7928,693 @@ Migrating to AddActivationToUsers (20190117095440)
   [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "example-99@railstutorial.org"], ["LIMIT", 1]]
   [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest", "activated", "activated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?)[0m  [["name", "Cielo Rohan"], ["email", "example-99@railstutorial.org"], ["created_at", "2019-01-17 12:45:38.444209"], ["updated_at", "2019-01-17 12:45:38.444209"], ["password_digest", "$2a$10$Sq9XuNsZPDmaEqgFc0tPL.L7FEFAaN0uOChy9UYczrV01BZik2I62"], ["activation_digest", "$2a$10$Tarfupk/j2.chlccoGzx.OjVNhX1odJ1.aTOA96uNdyGtLTux9arq"], ["activated", "t"], ["activated_at", "2019-01-17 12:45:38.370364"]]
   [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-01-21 14:49:38 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2543.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (121.2ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 2694ms (Views: 2686.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2019-01-21 14:52:06 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Completed 500 Internal Server Error in 228ms (ActiveRecord: 1.9ms)
+
+
+  
+NoMethodError (undefined method `activation_toker=' for #<User:0x00007fef9f282a58>
+Did you mean?  activation_token=
+               activation_token
+               activation_digest=
+               activation_digest):
+  
+test/mailers/previews/user_mailer_preview.rb:7:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2019-01-21 14:52:24 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+UserMailer#account_activation: processed outbound mail in 0.3ms
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.9ms)
+
+
+  
+ArgumentError (wrong number of arguments (given 0, expected 1)):
+  
+app/mailers/user_mailer.rb:8:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2019-01-21 14:52:34 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (311.0ms)
+UserMailer#account_activation: processed outbound mail in 331.8ms
+Completed 500 Internal Server Error in 358ms (ActiveRecord: 1.7ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_account_activations_url' for #<#<Class:0x00007fefa1154490>:0x00007fef9f563830>
+Did you mean?  edit_account_activation_url):
+    2: 
+    3: Welcome to the Sample App! Click on the link below to activate your account:
+    4: 
+    5: <%= edit_account_activations_url(@user.activation_token, email: @user.email) %>
+  
+app/views/user_mailer/account_activation.text.erb:5:in `_app_views_user_mailer_account_activation_text_erb___2816690749212788739_70333588219920'
+app/mailers/user_mailer.rb:11:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2019-01-21 14:53:08 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.5ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (21.9ms)
+UserMailer#account_activation: processed outbound mail in 46.8ms
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_account_activations_url' for #<#<Class:0x00007fefa1154490>:0x00007fefa50ec2b0>
+Did you mean?  edit_account_activation_url):
+    2: 
+    3: Welcome to the Sample App! Click on the link below to activate your account:
+    4: 
+    5: <%= edit_account_activations_url(@user.activation_token, email: @user.email) %>
+  
+app/views/user_mailer/account_activation.text.erb:5:in `_app_views_user_mailer_account_activation_text_erb___2816690749212788739_70333610445680'
+app/mailers/user_mailer.rb:11:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2019-01-21 14:53:24 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.6ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (35.1ms)
+UserMailer#account_activation: processed outbound mail in 60.1ms
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `edit_account_activations_url' for #<#<Class:0x00007fefa1154490>:0x00007fefa5041798>
+Did you mean?  edit_account_activation_url):
+    2: 
+    3: Welcome to the Sample App! Click on the link below to activate your account:
+    4: 
+    5: <%= edit_account_activations_url(@user.activation_token, email: @user.email) %>
+  
+app/views/user_mailer/account_activation.text.erb:5:in `_app_views_user_mailer_account_activation_text_erb___2816690749212788739_70333621327560'
+app/mailers/user_mailer.rb:11:in `account_activation'
+Started GET "/rails/mailers/user_mailer/account_activation" for 127.0.0.1 at 2019-01-21 14:55:03 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.6ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.5ms)
+UserMailer#account_activation: processed outbound mail in 51.6ms
+  Rendering /Users/mh/.rvm/gems/ruby-2.4.3/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb
+  Rendered /Users/mh/.rvm/gems/ruby-2.4.3/gems/railties-5.1.6/lib/rails/templates/rails/mailers/email.html.erb (4.1ms)
+Completed 200 OK in 65ms (Views: 10.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fhtml" for 127.0.0.1 at 2019-01-21 14:55:03 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.6ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.5ms)
+UserMailer#account_activation: processed outbound mail in 52.8ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 63ms (Views: 2.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation?part=text%2Fplain" for 127.0.0.1 at 2019-01-21 14:55:07 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.0ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.3ms)
+UserMailer#account_activation: processed outbound mail in 26.9ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 37ms (Views: 0.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation.txt?part=text%2Fhtml" for 127.0.0.1 at 2019-01-21 14:55:09 +0200
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.1ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.8ms)
+UserMailer#account_activation: processed outbound mail in 24.8ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 28ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation.html?part=text%2Fplain" for 127.0.0.1 at 2019-01-21 14:55:35 +0200
+Processing by Rails::MailersController#preview as HTML
+  Parameters: {"part"=>"text/plain", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (2.7ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.5ms)
+UserMailer#account_activation: processed outbound mail in 441.2ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 687ms (Views: 1.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/rails/mailers/user_mailer/account_activation.txt?part=text%2Fhtml" for 127.0.0.1 at 2019-01-21 14:55:38 +0200
+Processing by Rails::MailersController#preview as TEXT
+  Parameters: {"part"=>"text/html", "path"=>"user_mailer/account_activation"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.2ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.5ms)
+UserMailer#account_activation: processed outbound mail in 26.4ms
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 31ms (Views: 0.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-21 15:42:07 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (432.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (43.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (2.0ms)
+Completed 200 OK in 492ms (Views: 490.7ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2019-01-21 15:42:10 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/_form.html.erb (8.1ms)
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (29.6ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 71ms (Views: 50.7ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-21 15:42:30 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uyKU1UCPlEU7W8t6k7Cr2nLzBME9Z0LZyhlQo3DEWTh1/C3ADFUC3+c2qgVFCU4PhUcnIWReleB+C+jP0S8uVg==", "user"=>{"name"=>"mh", "email"=>"mh@anadeainc.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "mh@anadeainc.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "mh"], ["email", "mh@anadeainc.com"], ["created_at", "2019-01-21 13:42:30.811648"], ["updated_at", "2019-01-21 13:42:30.811648"], ["password_digest", "$2a$10$VzR8dCyJ8/MHl7iorqLin./Ztv3mDPnREIfBvvKjpKvRWm3lb6.qu"], ["activation_digest", "$2a$10$Wiq1bDrkF/fpDtPl587TeuVdvSbzFpDKWyJIZy6NRndAT4F0ZmK0C"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.3ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.6ms)
+UserMailer#account_activation: processed outbound mail in 25.7ms
+Sent mail to mh@anadeainc.com (6.1ms)
+Date: Mon, 21 Jan 2019 15:42:30 +0200
+From: noreply@example.com
+To: mh@anadeainc.com
+Message-ID: <5c45cc46dee31_59bd3ff7cda8695c1688@0714c0001.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c45cc46ddd96_59bd3ff7cda8695c1676b";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c45cc46ddd96_59bd3ff7cda8695c1676b
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi mh
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+http://localhost:3000/account_activations/fmwnKiLIJCG7_n9yYQPmZA/edit?email=mh%40anadeainc.com
+
+
+----==_mimepart_5c45cc46ddd96_59bd3ff7cda8695c1676b
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>
+  Hi mh,
+</p>
+<p>
+  Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+<a href="http://localhost:3000/account_activations/fmwnKiLIJCG7_n9yYQPmZA/edit.mh@anadeainc.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5c45cc46ddd96_59bd3ff7cda8695c1676b--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 183ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-21 15:42:30 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (1.8ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (32.8ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 52ms (Views: 49.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/fmwnKiLIJCG7_n9yYQPmZA/edit.mh@anadeainc.com" for 127.0.0.1 at 2019-01-21 15:43:25 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations/fmwnKiLIJCG7_n9yYQPmZA/edit.mh@anadeainc.com"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "created_at", "updated_at", "remember_digest", "activation_digest") VALUES (?, ?, ?, ?, ?)[0m  [["email", "test@example.com"], ["created_at", "2019-01-21 14:25:45.509511"], ["updated_at", "2019-01-21 14:25:45.509511"], ["remember_digest", "$2a$10$9MLQmx8FSjmeYPxph3.N5edUAuhOpdUJAywYsQJXRpiuYa/5hPgX6"], ["activation_digest", "$2a$10$b22NLwr9U5b2aVgGTUbAiu/z9OoOxpieBLOx3UcmfelO/XjfA0XR6"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-01-21 16:36:51 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (317.9ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (99.3ms)
+  Rendered layouts/_header.html.erb (4.3ms)
+  Rendered layouts/_footer.html.erb (19.3ms)
+Completed 200 OK in 495ms (Views: 485.9ms)
+
+
+Started GET "/account_activations/fmwnKiLIJCG7_n9yYQPmZA/edit.mh@anadeainc.com" for 127.0.0.1 at 2019-01-21 16:36:57 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations/fmwnKiLIJCG7_n9yYQPmZA/edit.mh@anadeainc.com"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/" for 127.0.0.1 at 2019-01-21 16:37:11 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (3.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (71.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 100ms (Views: 97.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-21 16:37:13 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (52.8ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 74ms (Views: 71.9ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2019-01-21 16:38:17 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/_form.html.erb (7.7ms)
+  Rendered users/new.html.erb within layouts/application (9.8ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (56.3ms)
+  Rendered layouts/_header.html.erb (3.1ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 120ms (Views: 83.9ms | ActiveRecord: 5.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-21 16:38:36 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"fO9bA0Sg7qQA9Ht6cOREaBTdviwfPxAwGu+bjlDt/zKyMeIWCHp4PtyZGgWmXaG942mdzEYGxwmu/SPi8QaIXA==", "user"=>{"name"=>"mh", "email"=>"mh@anadeainc.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "mh@anadeainc.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.8ms)
+  Rendered users/_form.html.erb (6.5ms)
+  Rendered users/new.html.erb within layouts/application (8.9ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (45.9ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 145ms (Views: 70.9ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-21 16:38:51 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"16hkZq81zlD5pazF6Hec2kAi+r47/t+uptAD2fnXLz06kYYx9zCIPQPy9GFSND06F4or+uFuGT9LWfjsg3wklA==", "user"=>{"name"=>"mh", "email"=>"holla1144@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "mh"], ["email", "holla1144@gmail.com"], ["created_at", "2019-01-21 14:38:51.346729"], ["updated_at", "2019-01-21 14:38:51.346729"], ["password_digest", "$2a$10$ikKsEJ5vS2.1kkoS5ravLOX/K4bJLYTTqQKpGOXBzfeIyebCbgv4q"], ["activation_digest", "$2a$10$kqFgOtcjSqcy8/8zo6841uo/Pr.5OqnbEQgTdCJOelwk7F3oEHjoS"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (1.5ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.7ms)
+UserMailer#account_activation: processed outbound mail in 26.8ms
+Sent mail to holla1144@gmail.com (6.1ms)
+Date: Mon, 21 Jan 2019 16:38:51 +0200
+From: noreply@example.com
+To: holla1144@gmail.com
+Message-ID: <5c45d97b6d865_59bd3ff7cda86ca417058@0714c0001.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c45d97b6c872_59bd3ff7cda86ca416926";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c45d97b6c872_59bd3ff7cda86ca416926
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi mh
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+http://localhost:3000/account_activations/DQsaxfJjeheWYs9pn0bmFg/edit.holla1144@gmail.com
+
+
+----==_mimepart_5c45d97b6c872_59bd3ff7cda86ca416926
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>
+  Hi mh,
+</p>
+<p>
+  Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+<a href="http://localhost:3000/account_activations/DQsaxfJjeheWYs9pn0bmFg/edit.holla1144@gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5c45d97b6c872_59bd3ff7cda86ca416926--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 174ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-21 16:38:51 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.0ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (47.4ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/DQsaxfJjeheWYs9pn0bmFg/edit.holla1144@gmail.com" for 127.0.0.1 at 2019-01-21 16:39:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/account_activations/DQsaxfJjeheWYs9pn0bmFg/edit.holla1144@gmail.com"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.6) lib/rack/method_override.rb:22:in `call'
+rack (2.0.6) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.6) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = ?[0m  [["id", 103]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/" for 127.0.0.1 at 2019-01-21 16:49:26 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (32.3ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (122.4ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 209ms (Views: 192.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/login" for 127.0.0.1 at 2019-01-21 16:49:28 +0200
+Processing by SessionsController#new as HTML
+  Rendering sessions/new.html.erb within layouts/application
+  Rendered sessions/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (42.8ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 64ms (Views: 63.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2019-01-21 16:49:30 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (1.0ms)
+  Rendered users/_form.html.erb (8.1ms)
+  Rendered users/new.html.erb within layouts/application (11.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (39.1ms)
+  Rendered layouts/_header.html.erb (1.2ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 71ms (Views: 64.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-01-21 16:49:41 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3sU/fhxbZouo7BS7ntsNWTFkQXgS9mtolGBHFk2IhlAQG4ZrUIHwEXSBdcRIYuiMxtBimEvPvFEgcv967GPxPg==", "user"=>{"name"=>"mh", "email"=>"holla1144@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "mh"], ["email", "holla1144@gmail.com"], ["created_at", "2019-01-21 14:49:41.897822"], ["updated_at", "2019-01-21 14:49:41.897822"], ["password_digest", "$2a$10$tuREF1LbwHkgxol8KHGc0uFr.i5CaySzzaYBskcE5Dv/vKSVSqkCW"], ["activation_digest", "$2a$10$WacwSy4paThbXnDaXHoxwe7amUhCvn.VlWkqnI3MWFUVXaT1D6k3W"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (2.8ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.8ms)
+UserMailer#account_activation: processed outbound mail in 36.5ms
+Sent mail to holla1144@gmail.com (6.5ms)
+Date: Mon, 21 Jan 2019 16:49:42 +0200
+From: noreply@example.com
+To: holla1144@gmail.com
+Message-ID: <5c45dc062019_59bd3ff7cda8695c1725a@0714c0001.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c45dc06b89_59bd3ff7cda8695c171fc";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c45dc06b89_59bd3ff7cda8695c171fc
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi mh
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+http://localhost:3000/account_activations/tWrVHr2yjH__sFYRJv1iVg/edit?email=holla1144%40gmail.com
+
+
+----==_mimepart_5c45dc06b89_59bd3ff7cda8695c171fc
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>
+  Hi mh,
+</p>
+<p>
+  Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+<a href="http://localhost:3000/account_activations/tWrVHr2yjH__sFYRJv1iVg/edit?email=holla1144%40gmail.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5c45dc06b89_59bd3ff7cda8695c171fc--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 192ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-01-21 16:49:42 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/home.html.erb within layouts/application (2.1ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (51.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (1.1ms)
+Completed 200 OK in 73ms (Views: 70.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/tWrVHr2yjH__sFYRJv1iVg/edit?email=holla1144%40gmail.com" for 127.0.0.1 at 2019-01-21 16:49:50 +0200
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"holla1144@gmail.com", "id"=>"tWrVHr2yjH__sFYRJv1iVg"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "holla1144@gmail.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "users" SET "activated" = ?, "updated_at" = ? WHERE "users"."id" = ?[0m  [["activated", "t"], ["updated_at", "2019-01-21 14:49:50.491403"], ["id", 104]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.4ms)[0m  [1m[33mUPDATE "users" SET "updated_at" = ?, "activated_at" = ? WHERE "users"."id" = ?[0m  [["updated_at", "2019-01-21 14:49:50.506768"], ["activated_at", "2019-01-21 14:49:50.504206"], ["id", 104]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/users/104
+Completed 302 Found in 209ms (ActiveRecord: 7.3ms)
+
+
+Started GET "/users/104" for 127.0.0.1 at 2019-01-21 16:49:50 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"104"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (2.6ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (96.0ms)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 104], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (2.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 168ms (Views: 146.3ms | ActiveRecord: 0.4ms)
+
+
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" ORDER BY "users"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
