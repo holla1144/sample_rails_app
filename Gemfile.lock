@@ -40,7 +40,7 @@ GEM
       tzinfo (~> 1.1)
     ansi (1.5.0)
     arel (8.0.0)
-    autoprefixer-rails (9.4.5)
+    autoprefixer-rails (9.5.0)
       execjs
     bcrypt (3.1.12)
     bindex (0.5.0)
@@ -63,7 +63,7 @@ GEM
       coffee-script-source
       execjs
     coffee-script-source (1.12.2)
-    concurrent-ruby (1.1.4)
+    concurrent-ruby (1.1.5)
     crass (1.0.4)
     erubi (1.8.0)
     excon (0.62.0)
@@ -71,15 +71,16 @@ GEM
     faker (1.7.3)
       i18n (~> 0.5)
     ffi (1.10.0)
-    fog-aws (2.0.1)
-      fog-core (~> 1.38)
-      fog-json (~> 1.0)
+    fog-aws (3.4.0)
+      fog-core (~> 2.1)
+      fog-json (~> 1.1)
       fog-xml (~> 0.1)
       ipaddress (~> 0.8)
-    fog-core (1.45.0)
+    fog-core (2.1.2)
       builder
       excon (~> 0.58)
       formatador (~> 0.2)
+      mime-types
     fog-json (1.2.0)
       fog-core
       multi_json (~> 1.10)
