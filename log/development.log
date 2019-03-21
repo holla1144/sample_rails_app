@@ -13649,3 +13649,434 @@ Processing by StaticPagesController#home as HTML
 Completed 200 OK in 131ms (Views: 122.9ms | ActiveRecord: 0.8ms)
 
 
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to AddPictureToMicroposts (20190321164903)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.1ms)[0m  [1m[35mALTER TABLE "microposts" ADD "picture" varchar[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190321164903"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id_and_created_at' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_microposts_on_user_id' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m  [1m[34m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+[0m
+Started GET "/" for 127.0.0.1 at 2019-03-21 18:56:03 +0200
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_new_user_home.html.erb (201.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (205.6ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (97.4ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 348ms (Views: 318.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/signup" for 127.0.0.1 at 2019-03-21 18:56:08 +0200
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.5ms)
+  Rendered users/_form.html.erb (422.1ms)
+  Rendered users/new.html.erb within layouts/application (425.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (111.5ms)
+  Rendered layouts/_header.html.erb (15.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 612ms (Views: 569.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-21 18:56:20 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0qZH6ISgTFZksS7ZX6nFXfrlMtRIpNs2PCvprfYpKER2/gZuGpdLHFENYudlVUM3+FFfjx1LJNKj+HpJgR6DRg==", "user"=>{"name"=>"MH", "email"=>"new_user_10101@corcoran.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "new_user_10101@corcoran.com"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered users/_form.html.erb (5.0ms)
+  Rendered users/new.html.erb within layouts/application (6.8ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_head.html.erb (33.4ms)
+  Rendered layouts/_header.html.erb (0.7ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 120ms (Views: 52.5ms | ActiveRecord: 0.4ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-03-21 18:56:28 +0200
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"0bZPgNSNqlAJivOMqdrAaItkkYwzkjZ7kH2WMKFcP+mcqrqGlBnujpUH54SGO46klYBvZKTB1biCxkwWDcesnQ==", "user"=>{"name"=>"MH", "email"=>"new_user_10101@corcoran.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Create my account"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists (0.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE LOWER("users"."email") = LOWER(?) LIMIT ?[0m  [["email", "new_user_10101@corcoran.com"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "password_digest", "activation_digest") VALUES (?, ?, ?, ?, ?, ?)[0m  [["name", "MH"], ["email", "new_user_10101@corcoran.com"], ["created_at", "2019-03-21 16:56:28.404156"], ["updated_at", "2019-03-21 16:56:28.404156"], ["password_digest", "$2a$10$p2B8dLcpPWQoSzuMQSW.A.sP/rpTxQMCUAl1N.Uehnhw9pSB4tXpO"], ["activation_digest", "$2a$10$y2neyqcCkiGvC98bfzHu0e71U.igrPL3KYCNDSyfgVcPiDY3aEiMq"]]
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  Rendering user_mailer/account_activation.html.erb within layouts/mailer
+  Rendered user_mailer/account_activation.html.erb within layouts/mailer (2.1ms)
+  Rendering user_mailer/account_activation.text.erb within layouts/mailer
+  Rendered user_mailer/account_activation.text.erb within layouts/mailer (0.7ms)
+UserMailer#account_activation: processed outbound mail in 313.5ms
+Sent mail to new_user_10101@corcoran.com (10.3ms)
+Date: Thu, 21 Mar 2019 18:56:28 +0200
+From: noreply@example.com
+To: new_user_10101@corcoran.com
+Message-ID: <5c93c23cef82c_aa153ff55d50c4081771f@MacBook-Pro-Max.local.mail>
+Subject: Account activation
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5c93c23ced86b_aa153ff55d50c408176ac";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5c93c23ced86b_aa153ff55d50c408176ac
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+Hi MH
+
+Welcome to the Sample App! Click on the link below to activate your account:
+
+http://localhost:3000/account_activations/AsrnLgmphBqrB5KLO3GC_g/edit?email=new_user_10101%40corcoran.com
+
+
+----==_mimepart_5c93c23ced86b_aa153ff55d50c408176ac
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      /* Email styles need to be inline */
+    </style>
+  </head>
+
+  <body>
+    <h1>Sample App</h1>
+
+<p>
+  Hi MH,
+</p>
+<p>
+  Welcome to the Sample App! Click on the link below to activate your account:
+</p>
+<a href="http://localhost:3000/account_activations/AsrnLgmphBqrB5KLO3GC_g/edit?email=new_user_10101%40corcoran.com">Activate</a>
+
+  </body>
+</html>
+
+----==_mimepart_5c93c23ced86b_aa153ff55d50c408176ac--
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 646ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 18:56:28 +0200
+Processing by StaticPagesController#home as HTML
+  Rendering static_pages/home.html.erb within layouts/application
+  Rendered static_pages/_new_user_home.html.erb (5.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (8.2ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (41.1ms)
+  Rendered layouts/_header.html.erb (1.1ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 69ms (Views: 66.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account_activations/AsrnLgmphBqrB5KLO3GC_g/edit?email=new_user_10101%40corcoran.com" for 127.0.0.1 at 2019-03-21 18:56:38 +0200
+Processing by AccountActivationsController#edit as HTML
+  Parameters: {"email"=>"new_user_10101@corcoran.com", "id"=>"AsrnLgmphBqrB5KLO3GC_g"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "new_user_10101@corcoran.com"], ["LIMIT", 1]]
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE "users" SET "activated" = 't', "activated_at" = '2019-03-21 16:56:38.667934' WHERE "users"."id" = ?[0m  [["id", 102]]
+Redirected to http://localhost:3000/users/102
+Completed 302 Found in 87ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/users/102" for 127.0.0.1 at 2019-03-21 18:56:38 +0200
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.2ms)
+
+
+  
+NameError (uninitialized constant Micropost::PictureUploader):
+  
+app/models/micropost.rb:4:in `<class:Micropost>'
+app/models/micropost.rb:1:in `<top (required)>'
+app/controllers/users_controller.rb:12:in `show'
+Started GET "/users/102" for 127.0.0.1 at 2019-03-21 18:57:01 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"102"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mMicropost Exists (0.1ms)[0m  [1m[34mSELECT  1 AS one FROM "microposts" WHERE "microposts"."user_id" = ? LIMIT ?[0m  [["user_id", 102], ["LIMIT", 1]]
+  Rendered users/show.html.erb within layouts/application (7.7ms)
+  Rendered layouts/_shim.html.erb (0.7ms)
+  Rendered layouts/_head.html.erb (493.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered layouts/_header.html.erb (4.0ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 620ms (Views: 524.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 18:57:06 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (5.2ms)
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered shared/_micropost_form.html.erb (17.5ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  Rendered shared/_feed.html.erb (1.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (34.9ms)
+  Rendered layouts/_shim.html.erb (0.2ms)
+  Rendered layouts/_head.html.erb (59.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.4ms)
+Completed 200 OK in 136ms (Views: 107.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at 2019-03-21 18:57:21 +0200
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ZfVrm+NjrU7mFcUn6aYnwy1P5Ve39WNVqadAG/xKh0Hm7WtwuB3lDy4qkGQSxX7eNso6F/825TIZzQYg2wrHhQ==", "micropost"=>{"content"=>"Here's a file!", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007fc8c4b445d0 @tempfile=#<Tempfile:/var/folders/ng/d9_br_9x62bdsbqg6szsdkh40000gn/T/RackMultipart20190321-47262-wal4bn.jpeg>, @original_filename="download.jpeg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"micropost[picture]\"; filename=\"download.jpeg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Here's a file!"], ["user_id", 102], ["created_at", "2019-03-21 16:57:21.902962"], ["updated_at", "2019-03-21 16:57:21.902962"], ["picture", "download.jpeg"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 18:57:21 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (1.6ms)
+  Rendered shared/_error_messages.html.erb (0.4ms)
+  Rendered shared/_micropost_form.html.erb (3.4ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [1 times] (375.5ms)
+  Rendered shared/_feed.html.erb (384.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (395.5ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (50.7ms)
+  Rendered layouts/_header.html.erb (2.0ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 469ms (Views: 463.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 19:32:04 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 140ms (ActiveRecord: 2.5ms)
+
+
+  
+NoMethodError (undefined method `valida' for #<Class:0x00007fc8becdf080>
+Did you mean?  validate):
+  
+app/models/micropost.rb:7:in `<class:Micropost>'
+app/models/micropost.rb:1:in `<top (required)>'
+app/controllers/static_pages_controller.rb:4:in `home'
+Started GET "/" for 127.0.0.1 at 2019-03-21 19:34:00 +0200
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 1.1ms)
+
+
+  
+NoMethodError (undefined method `valida' for #<Class:0x00007fc8bf5c0938>
+Did you mean?  validate):
+  
+app/models/micropost.rb:7:in `<class:Micropost>'
+app/models/micropost.rb:1:in `<top (required)>'
+app/controllers/static_pages_controller.rb:4:in `home'
+Started GET "/" for 127.0.0.1 at 2019-03-21 19:34:26 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (3.9ms)
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered shared/_micropost_form.html.erb (7.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.9ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [1 times] (10.1ms)
+  Rendered shared/_feed.html.erb (16.4ms)
+  Rendered static_pages/home.html.erb within layouts/application (37.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (87.6ms)
+  Rendered layouts/_header.html.erb (0.9ms)
+  Rendered layouts/_footer.html.erb (0.6ms)
+Completed 200 OK in 214ms (Views: 142.9ms | ActiveRecord: 4.6ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at 2019-03-21 19:34:43 +0200
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iEJ6dmmC23SsD3Ai33BueA1SYXiiQQ1UXDtLXQIKW5LFXo9wKRafqjCCZCrwkSC0E7afkDUS7pdOgJF7rpHI5g==", "micropost"=>{"content"=>"", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007fc8bee2e198 @tempfile=#<Tempfile:/var/folders/ng/d9_br_9x62bdsbqg6szsdkh40000gn/T/RackMultipart20190321-47262-1cpae63.jpg>, @original_filename="800px-Snake_River_(5mb).jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"micropost[picture]\"; filename=\"800px-Snake_River_(5mb).jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (2.2ms)
+  Rendered shared/_error_messages.html.erb (0.8ms)
+  Rendered shared/_micropost_form.html.erb (4.8ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [1 times] (3.6ms)
+  Rendered shared/_feed.html.erb (7.3ms)
+  Rendered static_pages/home.html.erb within layouts/application (20.7ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (65.8ms)
+  Rendered layouts/_header.html.erb (1.3ms)
+  Rendered layouts/_footer.html.erb (0.8ms)
+Completed 200 OK in 119ms (Views: 104.9ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at 2019-03-21 19:35:23 +0200
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"zE7VxNhKoICLZQZmB+jj2CAuuKe06nMiq/5l3+LbnyiBUiDCmN7kXhfoEm4oCa0UPspGTyO5kOG5Rb/5TkAMXA==", "micropost"=>{"content"=>"Test", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007fc8c35190a8 @tempfile=#<Tempfile:/var/folders/ng/d9_br_9x62bdsbqg6szsdkh40000gn/T/RackMultipart20190321-47263-152irf9.jpg>, @original_filename="800px-Pizigani_1367_Chart_10MB.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"micropost[picture]\"; filename=\"800px-Pizigani_1367_Chart_10MB.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Test"], ["user_id", 102], ["created_at", "2019-03-21 17:35:23.754621"], ["updated_at", "2019-03-21 17:35:23.754621"], ["picture", "800px-Pizigani_1367_Chart_10MB.jpg"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 66ms (ActiveRecord: 6.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 19:35:23 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (3.3ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (17.5ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.3ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [2 times] (470.7ms)
+  Rendered shared/_feed.html.erb (476.2ms)
+  Rendered static_pages/home.html.erb within layouts/application (504.3ms)
+  Rendered layouts/_shim.html.erb (0.3ms)
+  Rendered layouts/_head.html.erb (317.2ms)
+  Rendered layouts/_header.html.erb (0.8ms)
+  Rendered layouts/_footer.html.erb (0.5ms)
+Completed 200 OK in 841ms (Views: 834.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 19:38:22 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (10.6ms)
+  Rendered shared/_error_messages.html.erb (0.9ms)
+  Rendered shared/_micropost_form.html.erb (8.2ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.2ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [2 times] (11.8ms)
+  Rendered shared/_feed.html.erb (16.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (45.3ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (88.2ms)
+  Rendered layouts/_header.html.erb (1.4ms)
+  Rendered layouts/_footer.html.erb (1.2ms)
+Completed 200 OK in 188ms (Views: 155.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 19:39:10 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (9.2ms)
+  Rendered shared/_error_messages.html.erb (1.5ms)
+  Rendered shared/_micropost_form.html.erb (12.3ms)
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.4ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [2 times] (17.6ms)
+  Rendered shared/_feed.html.erb (28.0ms)
+  Rendered static_pages/home.html.erb within layouts/application (61.9ms)
+  Rendered layouts/_shim.html.erb (0.5ms)
+  Rendered layouts/_head.html.erb (131.8ms)
+  Rendered layouts/_header.html.erb (2.3ms)
+  Rendered layouts/_footer.html.erb (0.7ms)
+Completed 200 OK in 249ms (Views: 214.4ms | ActiveRecord: 2.2ms)
+
+
+Started POST "/microposts" for 127.0.0.1 at 2019-03-21 20:24:38 +0200
+Processing by MicropostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hTroLzQnLXt49ap89g7NRbG0FGxzp1IGGN1R20BWPqXIJh0pdLNppeR4vnTZ74OJr1DqhOT0scUKZov97M2t0Q==", "micropost"=>{"content"=>"Hanging gardens", "picture"=>#<ActionDispatch::Http::UploadedFile:0x00007fc8c581cb18 @tempfile=#<Tempfile:/var/folders/ng/d9_br_9x62bdsbqg6szsdkh40000gn/T/RackMultipart20190321-47263-2p5ber.jpg>, @original_filename="GP_Hanging_In_Camera_RJ_orthorectified_negative_positive.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"micropost[picture]\"; filename=\"GP_Hanging_In_Camera_RJ_orthorectified_negative_positive.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "microposts" ("content", "user_id", "created_at", "updated_at", "picture") VALUES (?, ?, ?, ?, ?)[0m  [["content", "Hanging gardens"], ["user_id", 102], ["created_at", "2019-03-21 18:24:39.338166"], ["updated_at", "2019-03-21 18:24:39.338166"], ["picture", "GP_Hanging_In_Camera_RJ_orthorectified_negative_positive.jpg"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 359ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2019-03-21 20:24:39 +0200
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendering static_pages/home.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE "microposts"."user_id" = ?[0m  [["user_id", 102]]
+  Rendered shared/_user_info.html.erb (4.6ms)
+  Rendered shared/_error_messages.html.erb (0.6ms)
+  Rendered shared/_micropost_form.html.erb (6.3ms)
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "microposts" WHERE (user_id = 102)[0m
+  [1m[36mMicropost Load (0.1ms)[0m  [1m[34mSELECT  "microposts".* FROM "microposts" WHERE (user_id = 102) ORDER BY "microposts"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 30], ["OFFSET", 0]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 102], ["LIMIT", 1]]
+  Rendered collection of microposts/_micropost.html.erb [3 times] (74.3ms)
+  Rendered shared/_feed.html.erb (80.7ms)
+  Rendered static_pages/home.html.erb within layouts/application (102.7ms)
+  Rendered layouts/_shim.html.erb (0.4ms)
+  Rendered layouts/_head.html.erb (107.8ms)
+  Rendered layouts/_header.html.erb (2.9ms)
+  Rendered layouts/_footer.html.erb (0.9ms)
+Completed 200 OK in 246ms (Views: 237.9ms | ActiveRecord: 0.7ms)
+
+
